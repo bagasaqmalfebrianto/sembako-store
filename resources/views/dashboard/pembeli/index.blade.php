@@ -5,7 +5,7 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     </div>
 
-    <h2>Welcom Back, nama_pembeli</h2>
+    <h2>Welcom Back, {{ auth()->user()->name }}</h2>
 
 
     @can('admin')
