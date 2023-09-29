@@ -2,7 +2,6 @@
 
 @section('container')
 
-
 <div class="carousel w-full">
 
     {{-- Contoh Kode --}}
@@ -113,15 +112,4 @@
 
                 </div>
             </div>
-
-
-
-
-
-
 @endsection
-
-
-
-
-

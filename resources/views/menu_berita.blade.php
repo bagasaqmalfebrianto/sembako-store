@@ -8,14 +8,9 @@
     <hr class="border-t border-black">
 
 
-    <div class="my-3">
+    <div class="mb-60">
         @include('konten.berita')
     </div>
-
-
-
-
-
 </div>
 
 
