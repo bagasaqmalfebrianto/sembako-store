@@ -65,8 +65,8 @@ class DashboardController extends Controller
             'category_id'=>'required',
             'image'=>'image|file|max:10024',
             'body'=>'required',
-            // 'user_id'=>'required',
-            'selected_user_id' => 'required|exists:user_id',
+            'user_id'=>'required',
+            // 'selected_user_id' => 'required|exists:user_id',
         ]);
 
         if($request->file('image')){
@@ -74,7 +74,7 @@ class DashboardController extends Controller
         }
 
 
-        $validatedData['user_id'] = $request->input('selected_user_id'); // Mengambil user_id dari input tersembunyi
+        // $validatedData['user_id'] = $request->input('selected_user_id'); // Mengambil user_id dari input tersembunyi
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 70);
 
 

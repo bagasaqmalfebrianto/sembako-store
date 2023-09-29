@@ -10,7 +10,7 @@
 
       <div class="col-lg-8">
 
-          <form method="post" action="/dashboard/barang/{{ $barang->slug }}">
+          <form method="post" action="/dashboard/barang/{{ $barang->slug }} " enctype="multipart/form-data">
             @method('put')
             @csrf
               <div class="mb-3">
@@ -94,13 +94,27 @@
 
 {{-- SLUG --}}
 <script>
+
+function previewImage(){
+    const image = document.querySelector('#image');
+    const imgPreview = document.querySelector('.img-preview');
+
+    imgPreview.style.display = 'block';
+
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(image.files[0]);
+
+    oFReader.onload = function(oFREvent){
+      imgPreview.src = oFREvent.target.result;
+    }
+}
     const nama = document.querySelector("#nama");
 const slug = document.querySelector("#slug");
 
 nama.addEventListener("keyup", function() {
     let preslug = nama.value;
     preslug = preslug.replace(/ /g,"-");
-   
+
     slug.value = preslug.toLowerCase();
     });
 </script>

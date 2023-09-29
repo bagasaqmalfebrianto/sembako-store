@@ -119,8 +119,8 @@
     const nama = document.querySelector("#nama");
 const slug = document.querySelector("#slug");
 
-const userSelect = document.getElementById('user_id_select');
-    const selectedUserIdInput = document.getElementById('selected_user_id');
+// const userSelect = document.getElementById('user_id_select');
+//     const selectedUserIdInput = document.getElementById('selected_user_id');
 
 nama.addEventListener("keyup", function() {
     let preslug = nama.value;
@@ -144,10 +144,10 @@ function previewImage(){
 
 
 
-    userSelect.addEventListener('change', function() {
-        const selectedUserId = userSelect.options[userSelect.selectedIndex].value;
-        selectedUserIdInput.value = selectedUserId;
-    });
+    // userSelect.addEventListener('change', function() {
+    //     const selectedUserId = userSelect.options[userSelect.selectedIndex].value;
+    //     selectedUserIdInput.value = selectedUserId;
+    // });
 </script>
 
 
