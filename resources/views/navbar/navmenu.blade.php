@@ -89,9 +89,14 @@
         </form>
       </div>
 
-
       <div class="navbar-end">
-        <a href="/login" class="btn btn-success text-white">Login</a>
+        <div class="mr-1">
+          <a href="/login" class="btn btn-success text-white">Login</a>
+        </div>
+        <div>
+          <a href="/register" class="btn btn-accent text-white">Daftar</a>
+        </div>
       </div>
+
   </div>
 </div>
