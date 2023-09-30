@@ -77,7 +77,7 @@
         @foreach($nama_barang as $nb)
             <div id="item{{$loop->iteration}}" class="carousel-item w-full">
                 {{-- GANTI SRC IMAGE DIBAWAH INI --}} {{-- {{ asset('storage/' . $nb->image) }} --}}
-                <img src="https://source.unsplash.com/500x400?ball" class="w-full md:w-1/3 mx-auto" />
+                <img src="https://source.unsplash.com/500x400?ball" class="w-full md:w-1/2 mx-auto" />
             </div>
         @endforeach
     </div> 
