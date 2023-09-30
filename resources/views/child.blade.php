@@ -1,5 +1,5 @@
 @foreach ($nama_barang as $nb)
-    <div class="bg-white h-400 rounded-xl items-center inline-block drop-shadow-md carousel-item">
+    <div class="bg-white w-250 h-400 rounded-xl items-center inline-block drop-shadow-md carousel-item relative">
         <div class="flex justify-center items-center">
 
             @if ($nb->image)
