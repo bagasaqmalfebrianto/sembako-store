@@ -30,33 +30,72 @@
 
     <div class="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content flex flex-col ">
+        <div class="drawer-content flex flex-col m-5">
             <form method="post" action="/pembeli/edit_profile/{{ $user->id }}">
                 @method('put')
                 @csrf
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label for="name" class="form-label">Nama</label>
                     <input class="form-control" type="text" value="{{ old('name', $user->name) }}" name="name">
-                </div>
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input class="form-control" type="text" value="{{  old('username', $user->username) }}" name="username">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input class="form-control" type="text" value="{{ old('email', $user->email) }}" name="email">
-                </div>
-                <div class="mb-3">
-                    <label for="no_telp" class="form-label">No Telepon</label>
-                    <input class="form-control" type="text"   value="{{ old('no_telp', $user->no_telp) }}" name="no_telp">
-                </div>
-                <div class="mb-3">
-                    <label for="alamat" class="form-label">Alamat</label>
-                    <input class="form-control" type="text"   value="{{ old('alamat', $user->alamat) }}" name="alamat">
+                </div> --}}
+
+                <div class="form-control w-full max-w-xs">
+                    <label class="label">
+                      <span class="label-text">Nama lengkap</span>
+                    </label>
+                    <input value="{{ old('name', $user->name) }}" name="name" type="text" class="input input-bordered w-full" required />
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
+                {{-- <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input class="form-control" type="text" value="{{  old('username', $user->username) }}" name="username">
+                </div> --}}
+
+                <div class="form-control w-full max-w-xs">
+                    <label class="label">
+                        <span class="label-text">Username</span>
+                    </label>
+                    <input type="text" value="{{  old('username', $user->username) }}" name="username" class="input input-bordered w-full" required />
+                </div>
+
+                {{-- <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input class="form-control" type="text" value="{{ old('email', $user->email) }}" name="email">
+                </div> --}}
+
+                <div class="form-control w-full max-w-xs">
+                    <label class="label">
+                        <span class="label-text">Email</span>
+                    </label>
+                    <input type="email" value="{{  old('email', $user->email) }}" name="email" class="input input-bordered w-full" required />
+                </div>
+
+                {{-- <div class="mb-3">
+                    <label for="no_telp" class="form-label">No Telepon</label>
+                    <input class="form-control" type="text"   value="{{ old('no_telp', $user->no_telp) }}" name="no_telp">
+                </div> --}}
+
+                <div class="form-control w-full max-w-xs">
+                    <label class="label">
+                        <span class="label-text">Nomor Telepon</span>
+                    </label>
+                    <input type="text" value="{{  old('no_telp', $user->no_telp) }}" name="no_telp" class="input input-bordered w-full" required />
+                </div>
+
+                {{-- <div class="mb-3">
+                    <label for="alamat" class="form-label">Alamat</label>
+                    <input class="form-control" type="text"   value="{{ old('alamat', $user->alamat) }}" name="alamat">
+                </div> --}}
+
+                <div class="form-control w-full max-w-xs">
+                    <label class="label">
+                        <span class="label-text">Alamat</span>
+                    </label>
+                    <input type="text" value="{{  old('alamat', $user->alamat) }}" name="alamat" class="input input-bordered w-full" required />
+                </div>
+
+                <button type="submit" class="btn btn-primary my-5">Submit</button>
+            </form>
 
         </div>
         <div class="drawer-side">
