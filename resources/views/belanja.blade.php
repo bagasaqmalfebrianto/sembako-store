@@ -73,18 +73,22 @@
 
     <hr class="border-t border-black mb-4">
 
-
-    <div class="drop-shadow-[0_5px_2px_rgba(0,0,0,0.25)] mt-3 flex justify-center items-center gap-2">
-
-            <div class="owl-carousel new-arrivels-carousel owl-theme">
-
-                        @include('child')
-
+    <div class="carousel w-full mt-10">
+        @foreach($nama_barang as $nb)
+            <div id="item{{$loop->iteration}}" class="carousel-item w-full">
+                {{-- GANTI SRC IMAGE DIBAWAH INI --}} {{-- {{ asset('storage/' . $nb->image) }} --}}
+                <img src="https://source.unsplash.com/500x400?ball" class="w-full md:w-1/3 mx-auto" />
             </div>
+        @endforeach
+    </div> 
 
+    <div class="flex justify-center w-full py-2 gap-2 mb-10">
+        @foreach($nama_barang as $nb)
+        <a href="#item{{$loop->iteration}}" class="btn btn-xs">{{$loop->iteration}}</a>
+        @endforeach
     </div>
 
-    <div class="">
+    <div class="w-full">
         <img src="/images/iklan1.png" alt="iklan" class="w-full h-200">
     </div>
 
@@ -102,7 +106,7 @@
 
     @if($nama_barang->count())
         <div class="drop-shadow-[0_5px_2px_rgba(0,0,0,0.25)] mt-3 flex justify-center items-center">
-            <ul id="data-wrapper" class="grid grid-cols-4 gap-4">
+            <ul id="data-wrapper" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 
                 @include('child')
 
