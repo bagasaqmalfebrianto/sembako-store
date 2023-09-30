@@ -39,7 +39,7 @@
 </div>
     <!-- ISI -->
 
-                <ul class="flex justify-between">
+            <ul class="flex justify-between">
                     <li>
                         <a href="#" class="font-bold text-lg text-green_button">PRODUK</a>
                     </li>
@@ -51,13 +51,11 @@
             <hr class="border-t border-black">
 
             <div class="drop-shadow-[0_5px_2px_rgba(0,0,0,0.25)] mt-3 flex justify-center items-center">
-                <ul class="grid grid-cols-4 gap-4">
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                      @foreach ($nama_barang as $nb )
-
-
                         <li>
                             <a href="/belanjas/{{ $nb->slug }}">
-                                <div class="bg-white w-250 h-400 rounded-xl items-center inline-block drop-shadow-md">
+                                <div class="bg-white w-250 h-400 rounded-xl items-center drop-shadow-md">
                                     @if($nb->image)
                                     <div style="max-height: 200px; overflow:hidden">
 
