@@ -7,7 +7,7 @@
         <div class="col-md-8">
             <h1 class="mb-5 font-bold text-2xl text-center">{!! $berita->title !!}</h1>
             <div>
-                <img src="{{ asset('storage/'.$berita->image) }}" alt="gambar">
+                <img src="https://source.unsplash.com/500x400?ball" alt="gambar" class="mx-auto">
             </div>
 
             {{-- @if ($post->image)
@@ -15,7 +15,7 @@
             @else
                 <img src="https://source.unsplash.com/500x400?{{ $post->category->nama }}" class="card-img-top" alt="{{ $post->category->nama }}">
             @endif --}}
-            <article class="my-3 fs-6 text-justify">
+            <article class="my-3 px-5 fs-6 text-justify">
                 <p>{!! $berita->body !!}</p>
             </article>
 
