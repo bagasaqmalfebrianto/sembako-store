@@ -2,29 +2,25 @@
     <div class="drop-shadow-[0_5px_2px_rgba(0,0,0,0.25)]">
         <ul class="mb-3">
             @foreach ($berita as $brt )
+                <li class="mb-3">
+                    <a href="/rincian_berita/{{ $brt->slug }}">
+                        <div class="mt-5 w-full flex flex-col md:flex-row">
+                            <div class="w-full md:w-1/5 px-3 md:px-0">
+                                <img src="https://source.unsplash.com/500x400?ball" alt="gambar" class="w-full rounded-xl">
+                            </div>
 
-            <li class="mb-3">
-                <a href="/rincian_berita/{{ $brt->slug }}">
-                    <div class="bg-slate-100 w-1200 h-250  rounded-xl items-center flex drop-shadow-md ">
-                        <div class=" w-1/5 ">
-                            <div class="w-300 px-2">
-                            <img src="{{ asset('storage/' . $brt->image) }}" alt="gambar" class="rounded-xl object-cover  h-200">
+                            <div class="w-full md:w-4/5 px-5 py-3 md:py-0">
+                                <div>
+                                    <h1 class="font-bold text-xl pb-1 hover:text-teal-700">{{ $brt->title }}</h1>
+                                </div>
+                                <div>
+                                    <p>{!! Str::limit($brt->body, 600)!!}</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="w-4/5 h-200 inline-block relative">
-                            <div>
-                            <h1 class="font-bold text-xl pb-1">{{ $brt->title }}</h1>
-                            <p>{!! Str::limit($brt->body, 600)!!}</p>
-                            </div>
-                            <div>
-                                <a href="" class="absolute bottom-0 right-5 font-bold text-lg text-green_button">Selengkapnya</a>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
+                    </a>
+                </li>
             @endforeach
-
         </ul>
     </div>
 </div>

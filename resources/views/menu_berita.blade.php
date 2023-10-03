@@ -8,7 +8,7 @@
     <hr class="border-t border-black">
 
 
-    <div class="mb-60">
+    <div>
         @include('konten.berita')
     </div>
 </div>
