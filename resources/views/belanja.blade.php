@@ -15,20 +15,75 @@
 
     <hr class="border-t border-black mb-4">
 
-    <div class="carousel w-full mt-10">
-        @foreach($nama_barang as $nb)
-            <div id="item{{$loop->iteration}}" class="carousel-item w-full">
-                {{-- GANTI SRC IMAGE DIBAWAH INI --}} {{-- {{ asset('storage/' . $nb->image) }} --}}
-                <img src="https://source.unsplash.com/500x400?ball" class="w-full md:w-1/2 mx-auto" />
-            </div>
-        @endforeach
-    </div> 
+    <div class="carousel w-full mb-5">
 
-    <div class="flex justify-center w-full py-2 gap-2 mb-10">
+        {{-- Contoh Kode --}}
+        @foreach ($iklans as $key => $iklan)
+            @if ($loop->first)
+                <div id="slide{{ $key }}" class="carousel-item relative w-full">
+                    {{-- {{ asset('storage/' . $iklan->image) }} --}}
+                    {{-- https://source.unsplash.com/500x400?ball --}}
+
+                    
+                    <img src="{{ asset('storage/' . $iklan->image) }}" class="w-full md:w-1/2 mx-auto" />
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide{{ $iklan->count() }}" class="btn btn-circle">❮</a>
+                        <a href="#slide{{ $key + 1 }}" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+            @endif
+
+            <div id="slide{{ $key }}" class="carousel-item relative w-full">
+                
+                <img src="{{ asset('storage/' . $iklan->image) }}" class="w-full md:w-1/2 mx-auto" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide{{ $key - 1 }}" class="btn btn-circle">❮</a>
+                    <a href="#slide{{ $key + 1 }}" class="btn btn-circle">❯</a>
+                </div>
+            </div>
+
+            @if ($loop->last)
+                <div id="slide{{ $key }}" class="carousel-item relative w-full">
+                    
+                    <img src="{{ asset('storage/' . $iklan->image) }}" class="w-1/2" />
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide{{ $key - 1 }}" class="btn btn-circle">❮</a>
+                        <a href="#slide{{ $key == 0 ? $key : 0 }}" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+            @endif
+        @endforeach
+        {{-- End --}}
+
+
+        {{-- <div id="slide1" class="carousel-item relative w-full">
+            <img src="{{ asset('images/promo-1.jpeg') }}" class="w-full" />
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide3" class="btn btn-circle">❮</a>
+                <a href="#slide2" class="btn btn-circle">❯</a>
+            </div>
+        </div>
+        <div id="slide2" class="carousel-item relative w-full">
+            <img src="{{ asset('images/promo-2.png') }}" class="w-full" />
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide1" class="btn btn-circle">❮</a>
+                <a href="#slide3" class="btn btn-circle">❯</a>
+            </div>
+        </div>
+        <div id="slide3" class="carousel-item relative w-full">
+            <img src="{{ asset('images/promo-3.png') }}" class="w-full" />
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                <a href="#slide2" class="btn btn-circle">❮</a>
+                <a href="#slide1" class="btn btn-circle">❯</a>
+            </div>
+        </div> --}}
+    </div>
+
+    {{-- <div class="flex justify-center w-full py-2 gap-2 mb-10">
         @foreach($nama_barang as $nb)
         <a href="#item{{$loop->iteration}}" class="btn btn-xs">{{$loop->iteration}}</a>
         @endforeach
-    </div>
+    </div> --}}
 
     <div class="w-full">
         <img src="/images/iklan1.png" alt="iklan" class="w-full h-200">
